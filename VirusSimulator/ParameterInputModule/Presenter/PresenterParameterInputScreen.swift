@@ -38,7 +38,7 @@ extension PresenterParameterInputScreen: PresenterParameterInputScreenProtocol {
     func validateParameters(parameters: ParametersModel) -> Bool {
         if !parameters.groupSize.isEmpty && !parameters.infectionFactor.isEmpty && !parameters.period.isEmpty {
             if parameters.groupSize.isInt && parameters.infectionFactor.isInt && parameters.period.isInt {
-                if let intFactor = Int(parameters.infectionFactor), intFactor < 1 || intFactor > 8 {
+                if let intFactor = Int(parameters.infectionFactor), let intGroupSize = Int(parameters.groupSize), let intPeriod = Int(parameters.period), intFactor < 1 || intFactor > 8 || intGroupSize < 1 || intPeriod < 1 {
                     return false
                 }
                 return true

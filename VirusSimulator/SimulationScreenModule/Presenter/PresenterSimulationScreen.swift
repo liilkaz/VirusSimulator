@@ -68,7 +68,7 @@ extension PresenterSimulationScreen {
     }
     
     func getGroupSize() -> Int {
-        Int(parametres.groupSize) ?? 0
+        Int(parametres.groupSize) ?? 1
     }
     
     func getInfectionFactor() -> Int {
